@@ -4,7 +4,7 @@ import json
 import pika
 
 from common.json import ModelEncoder
-from events.api_views import ConferenceListEncoder
+from events. import ConferenceListEncoder
 from events.models import Conference
 from .models import Presentation
 
