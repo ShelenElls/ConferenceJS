@@ -228,3 +228,21 @@ def api_show_location(request, pk):
             encoder=LocationDetailEncoder,
             safe=False,
         )
+
+@require_http_methods(["GET"])
+def api_list_states(request):
+    # return jsonresponse dictionary with one key 'states' 
+    # contains a list of dictionaries and abbrevations 
+    # list of the states should be returned ordered by the name of 
+    # the state, not the abbrevation 
+
+    if request.method == "GET":
+        states = State.objects.all().order_by("name")
+        state_list = []
+        for state in states:
+            state_list.append({
+                "name": state.name,
+                "abbreviation": state.abbreviation,
+            })
+        return JsonResponse({"states": state_list}) 
+    pass
