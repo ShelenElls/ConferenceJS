@@ -1,6 +1,6 @@
 function createCard(name, description, pictureUrl, starts, ends, location) {
     return `
-      <div class="card mx-auto shadow p-3 mb-5 bg-body rounded col-md">
+      <div class="card shadow-sm p-3 mb-5 bg-white rounded">
         <img src="${pictureUrl}" class="card-img-top">
         <div class="card-body">
           <h5 class="card-title">${name}</h5>
@@ -39,7 +39,7 @@ window.addEventListener('DOMContentLoaded', async () => {
                     const description = details.conference.description;
                     const pictureUrl = details.conference.location.picture_url;
                     const html = createCard(title, description, pictureUrl, startDate, endDate, location);
-                    const column = document.querySelector('.row');
+                    const column = document.querySelector('.col');
                     column.innerHTML += html;
                 }
             }
