@@ -1,16 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
-import Nav from './Nav';
-import React from 'react';
+import React from 'react'
 
-function App(props) {
-  if (props.attendees === undefined) {
-    return null;
-  }
+
+export default function AttendeesList(props) {
   return (
     <div>
-    <Nav />
-    <div className="container">
       <table className = "table table-striped">
         <thead>
           <tr>
@@ -30,8 +23,7 @@ function App(props) {
         </tbody>
       </table>
     </div>
-    </div>
   )
 }
 
-export default App;
+
