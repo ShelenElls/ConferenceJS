@@ -10,9 +10,8 @@ class LocationForm extends React.Component {
             city: '',
             states: []
         };
-        this.state = { states: [] };
         this.handleNameChange = this.handleNameChange.bind(this);
-        this.handleRoomChange = this.handleRoomChange.bind(this);
+        this.handleRoomCountChange = this.handleRoomChange.bind(this);
         this.handleCityChange = this.handleCityChange.bind(this);
         this.handleStateChange = this.handleStateChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -20,7 +19,7 @@ class LocationForm extends React.Component {
     async handleSubmit(event) {
         event.preventDefault();
         const data = { ...this.state };
-        data.room_count = data.roomCount;
+        data.roomCount = data.roomCount;
         delete data.roomCount;
         delete data.states;
         console.log(data);
@@ -71,15 +70,6 @@ class LocationForm extends React.Component {
         if (response.ok) {
             const data = await response.json();
             this.setState({ states: data.states });
-            {
-                this.state.states.map(state => {
-                    return (
-                        <option key={state.abbreviation} value={state.abbreviation}>
-                            {state.name}
-                        </option>
-                    );
-                })
-            }
         }
     }
     render() {

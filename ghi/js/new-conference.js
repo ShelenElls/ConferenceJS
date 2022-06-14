@@ -16,7 +16,6 @@ window.addEventListener('DOMContentLoaded', async () => {
                 secondOption.value = loct.id;
                 secondOption.innerHTML = loct.name;
                 locationTag.appendChild(secondOption)
-                console.log("STUFF:", loct)
             }
             const formTag = document.getElementById('create-conference-form')
             formTag.addEventListener('submit', async event => {
