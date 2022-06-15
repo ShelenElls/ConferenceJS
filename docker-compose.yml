@@ -105,3 +105,4 @@ services:
       - NODE_ENV=development
     ports:
       - "3001:3001"
+    
